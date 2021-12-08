@@ -17,5 +17,13 @@ pipeline{
                 echo 'Building dev'
             }
         }
+        stage('Pull Request'){
+            when{
+                changeRequest()
+            }
+            steps{
+                echo 'Change Request (pull request)'
+            }
+        }
     }
 }
